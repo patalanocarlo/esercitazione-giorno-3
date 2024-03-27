@@ -1,0 +1,83 @@
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .head {
+    background-color: paleturquoise;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .ul {
+    padding: 0rem;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente gli elementi nella sezione */
+  }
+
+  .ul li {
+    padding: 0.5rem;
+    border-radius: 30%;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+  }
+  div .shop-item {
+    padding: 1.5rem;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  main {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+  section {
+    min-height: 35vh;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+  }
+}
+#first {
+  gap: 3rem;
+}
+.img1,
+.img2,
+.img3,
+.img4 {
+  background-color: papayawhip;
+  border-radius: 3rem;
+  width: calc(50% - 1.5rem);
+  margin-bottom: 1.5rem;
+}
+span {
+  float: right;
+  margin-top: -40px;
+  margin-right: 20px;
+}
+button {
+  background-color: black;
+  color: white;
+  font-family: inherit;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+#second {
+  background-color: papayawhip;
+  padding: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+div h2 {
+  color: red;
+}
+.Image img {
+  margin: 0 auto;
+  max-width: 100%;
+}

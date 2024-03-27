@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      main {
+        max-width: 800px;
+        margin-inline: auto;
+      }
+
+      section {
+        background-color: #ebebeb;
+        min-height: 35vh;
+        border-radius: 8px;
+        display: flex;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .aqua {
+        background-color: aqua;
+      }
+
+      .coral {
+        background-color: coral;
+      }
+
+      .green {
+        background-color: palegreen;
+      }
+
+      .violet {
+        background-color: palevioletred;
+      }
+
+      #first .box:not(:last-child) {
+        margin-right: 12px;
+        /* oggi conviene usare il gap piuttosto che questo tipo di reset */
+      }
+
+      /* #first .box:last-of-type {
+            margin-right: 0;
+        } */
+
+      #second {
+        flex-direction: row-reverse;
+      }
+
+      #third {
+        flex-direction: column;
+      }
+
+      #fourth {
+        flex-direction: column-reverse;
+      }
+
+      #fifth {
+        /* wrap permette agli elementi di rompersi su più linee quando non c'è abbastanza spazio per accomodarli tutti */
+        flex-wrap: wrap;
+
+        /* align-content può essere usato SOLO se è presente il comportamento di WRAP */
+        align-content: flex-start;
+        gap: 12px 20px;
+      }
+
+      #sixth {
+        justify-content: space-between;
+      }
+
+      #seventh {
+        min-height: 55vh;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      #eighth {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #ninth {
+        min-height: 55vh;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      #tenth {
+        padding-block: 6rem;
+        align-items: baseline;
+        justify-content: center;
+      }
+
+      #tenth .box {
+        height: unset;
+        display: initial;
+      }
+
+      #tenth .box img {
+        width: 100%;
+        display: block;
+      }
+
+      #twelfth .box {
+        display: initial;
+        flex-grow: 1;
+      }
+
+      #twelfth .box:nth-of-type(2) {
+        background-image: url(https://images.unsplash.com/photo-1711419397450-476643e9020a?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-size: cover;
+      }
+
+      #thirteenth .box:nth-of-type(3) {
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h2>FLEX CONTAINER PROPERTIES</h2>
+      <hr />
+      <h4>Flex: direction row</h4>
+      <section id="first">
+        <div class="box aqua"></div>
+        <div class="box coral"></div>
+        <div class="box green"></div>
+        <div class="box violet"></div>
+      </section>
+
+      <h4>Flex: direction row-reverse</h4>
+      <section id="second">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: direction column</h4>
+      <section id="third">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: direction column-reverse</h4>
+      <section id="fourth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: wrap</h4>
+      <section id="fifth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: justify-content</h4>
+      <section id="sixth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: justify-content (column)</h4>
+      <section id="seventh">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: align-items (row)</h4>
+      <section id="eighth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: align-items (column)</h4>
+      <section id="ninth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: align-items (column)</h4>
+      <section id="ninth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex: align-items (stretch)</h4>
+      <section id="tenth">
+        <div class="box aqua">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNYbZ53Ye85lSYyD0j1gX2NbC7bXLYHUNcNWzGdBjBA&s"
+            alt=""
+          />
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, ipsam?
+        </div>
+        <div class="box coral">
+          <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Puma-Logo.png" alt=""> -->
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+          harum.
+        </div>
+        <div class="box green">
+          <img
+            src="https://static.vecteezy.com/ti/vettori-gratis/p3/10994276-adidas-logo-simbolo-abiti-design-icona-astratto-calcio-vettore-illustrazione-gratuito-vettoriale.jpg"
+            alt=""
+          />
+          Lorem, ipsum dolor.
+        </div>
+        <div class="box violet">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Under_armour_logo.svg"
+            alt=""
+          />
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore
+          possimus quas maxime cumque, fugit error est! Soluta officiis vero
+          eos.
+        </div>
+      </section>
+
+      <hr />
+      <h2>FLEX ITEMS PROPERTIES</h2>
+      <hr />
+
+      <h4>Flex items: order</h4>
+      <section id="eleventh">
+        <div class="box aqua" style="order: 2">1</div>
+        <div class="box coral" style="order: 1">2</div>
+        <div class="box green">3</div>
+        <div class="box violet" style="order: -1">4</div>
+      </section>
+
+      <h4>Flex items: flex-grow</h4>
+      <section id="twelfth">
+        <div class="box aqua">1</div>
+        <div class="box coral">2</div>
+        <div class="box green">3</div>
+        <div class="box violet">4</div>
+      </section>
+
+      <h4>Flex items: flex-shrink</h4>
+      <section id="thirteenth">
+        <div class="box aqua"></div>
+        <div class="box coral"></div>
+        <div class="box green">3</div>
+        <div class="box violet"></div>
+      </section>
+    </main>
+  </body>
+</html>
